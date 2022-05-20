@@ -1,3 +1,7 @@
+<BoardSpace@Button>:
+    text: ''
+    disabled_color: 255.0/255.0,255.0/255.0,255.0/255.0,1
+
 BoxLayout:
     orientation: 'vertical'
     pos_hint: {'center_x': 0.5, 'center_y': 0.6}
@@ -10,65 +14,56 @@ BoxLayout:
     GridLayout:
         cols: 3
 
-        Button:
+        BoardSpace:
             id: tl
-            text: ''
             on_release:
                 tl.text = app.toggleTurn()
                 tl.disabled = True
 
-        Button:
+        BoardSpace:
             id: tm
-            text: ''
             on_release:
                 tm.text = app.toggleTurn()
                 tm.disabled = True
 
-        Button:
+        BoardSpace:
             id: tr
-            text: ''
             on_release:
                 tr.text = app.toggleTurn()
                 tr.disabled = True
 
-        Button:
+        BoardSpace:
             id: ml
-            text: ''
             on_release:
                 ml.text = app.toggleTurn()
                 ml.disabled = True
 
-        Button:
+        BoardSpace:
             id: mm
-            text: ''
             on_release:
                 mm.text = app.toggleTurn()
                 mm.disabled = True
 
-        Button:
+        BoardSpace:
             id: mr
-            text: ''
             on_release:
                 mr.text = app.toggleTurn()
                 mr.disabled = True
 
-        Button:
+        BoardSpace:
             id: bl
-            text: ''
             on_release:
                 bl.text = app.toggleTurn()
                 bl.disabled = True
 
-        Button:
+        BoardSpace:
             id: bm
-            text: ''
             on_release:
                 bm.text = app.toggleTurn()
                 bm.disabled = True
 
-        Button:
+        BoardSpace:
             id: br
-            text: ''
             on_release:
                 br.text = app.toggleTurn()
                 br.disabled = True

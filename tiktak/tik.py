@@ -60,7 +60,7 @@ class MainApp(App):
         return self.gameTie()
 
     def gameWon(self, winner):
-        print('Game won by ', winner)
+        self.root.ids.instruct.text = 'Player ' + winner + ' has won.'
 
         # Disable all buttons
         self.root.ids.tl.disabled = True
@@ -75,10 +75,11 @@ class MainApp(App):
         
 
     def gameTie(self):
-        print('Game tied')
+        self.root.ids.instruct.text = 'The game has ended in a tie.'
 
     def nextTurn(self):
         self.turn = 'X' if self.turn == 'O' else 'O'
+        self.root.ids.instruct.text = 'Player ' + self.turn + ', select a box.'
 
 
 

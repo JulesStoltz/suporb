@@ -59,7 +59,7 @@ class MainApp(App):
         # Game is tied
         return self.gameTie()
 
-    def gameWon(self, winner):
+    def gameWon(self, winner): #TODO: Remove winner and take from turn instead
         self.root.ids.instruct.text = 'Player ' + winner + ' has won.'
 
         # Disable all buttons
@@ -72,14 +72,53 @@ class MainApp(App):
         self.root.ids.bl.disabled = True
         self.root.ids.bm.disabled = True
         self.root.ids.br.disabled = True
+
+        self.enablePlayAgain()
         
 
     def gameTie(self):
         self.root.ids.instruct.text = 'The game has ended in a tie.'
+        self.enablePlayAgain()
 
     def nextTurn(self):
         self.turn = 'X' if self.turn == 'O' else 'O'
         self.root.ids.instruct.text = 'Player ' + self.turn + ', select a box.'
+
+    def enablePlayAgain(self):
+        # Enable play again button and show
+        self.root.ids.playAgain.text = 'Play Again'
+        self.root.ids.playAgain.size_hint = 0.5, 0.3
+        self.root.ids.playAgain.disabled = False
+
+    def reset(self):
+        # Disable play again button and hide
+        self.root.ids.playAgain.text = ''
+        self.root.ids.playAgain.size_hint = (0.01, 0.01)
+        self.root.ids.playAgain.disabled = True
+
+        # Empty and enable all boxes
+        self.root.ids.tl.text = ''
+        self.root.ids.tl.disabled = False
+        self.root.ids.tm.text = ''
+        self.root.ids.tm.disabled = False
+        self.root.ids.tr.text = ''
+        self.root.ids.tr.disabled = False
+        self.root.ids.ml.text = ''
+        self.root.ids.ml.disabled = False
+        self.root.ids.mm.text = ''
+        self.root.ids.mm.disabled = False
+        self.root.ids.mr.text = ''
+        self.root.ids.mr.disabled = False
+        self.root.ids.bl.text = ''
+        self.root.ids.bl.disabled = False
+        self.root.ids.bm.text = ''
+        self.root.ids.bm.disabled = False
+        self.root.ids.br.text = ''
+        self.root.ids.br.disabled = False
+
+        # Start game with player that did not play last in previous game
+        self.nextTurn()
+        
 
 
 

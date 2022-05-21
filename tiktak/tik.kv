@@ -14,7 +14,16 @@ BoxLayout:
 
     BoardLabel:
         text: 'Tik Tak Toh'
-        size_hint: 1, 0.5
+        size_hint: 1, 0.3
+
+    BoardSpace:
+        id: playAgain
+        text: ''
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        size_hint: 0.01, 0.01
+        disabled: True
+        on_release:
+            app.reset()
 
     BoardLabel:
         id: instruct

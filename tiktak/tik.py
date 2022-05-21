@@ -15,15 +15,6 @@ class MainApp(App):
         self.turn = 'X'
         return kv
 
-    def toggleTurn(self):
-        match self.turn:
-            case 'X':
-                return "X"
-            case 'O':
-                return 'O'
-            case _:
-                return ''
-
     def checkBoard(self):
         # Get board values
         tl = self.root.ids.tl.text
@@ -61,12 +52,12 @@ class MainApp(App):
             # All forward slash diagonal match
         if tr != '' and tr == mm and tr == bl:
             return self.gameWon(tr)
-            # Check if any spaces available
+        
+        # Check if any spaces available
         if tl=='' or tm=='' or tr=='' or ml=='' or mm=='' or mr=='' or bl=='' or bm=='' or br=='':
             return self.nextTurn()
-            # Game is tied
-        else:
-            return self.gameTie()
+        # Game is tied
+        return self.gameTie()
 
     def gameWon(self, winner):
         print('Game won by ', winner)

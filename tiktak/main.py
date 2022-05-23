@@ -1,5 +1,5 @@
 import kivy
-kivy.require('2.1.0')
+kivy.require('1.9.0')
 
 from kivy.app import App
 from kivy.lang.builder import Builder
@@ -87,13 +87,13 @@ class MainApp(App):
     def enablePlayAgain(self):
         # Enable play again button and show
         self.root.ids.playAgain.text = 'Play Again'
-        self.root.ids.playAgain.size_hint = 0.5, 0.3
+        #self.root.ids.playAgain.size_hint = 0.5, 0.3
         self.root.ids.playAgain.disabled = False
 
     def reset(self):
         # Disable play again button and hide
         self.root.ids.playAgain.text = ''
-        self.root.ids.playAgain.size_hint = (0.01, 0.01)
+        #self.root.ids.playAgain.size_hint = (0.01, 0.01)
         self.root.ids.playAgain.disabled = True
 
         # Empty and enable all boxes

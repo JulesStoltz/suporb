@@ -3,6 +3,19 @@
     color: (0.25, 0.75, 1, 1)
     bold: True
 
+<CardFront@Label>:
+    font_size: '20sp'
+    bold: True
+    text_size: self.size
+    valign: 'center'
+    halign: 'center'
+
+<CardBack@Button>:
+    font_size: '20sp'
+    text_size: self.size
+    valign: 'center'
+    halign: 'center'
+
 <Header@BoxLayout>:
     orientation: 'horizontal'
     size_hint_y: 0.1
@@ -19,11 +32,11 @@
 <Body@BoxLayout>:
     orientation: 'vertical'
 
-    Label:
+    CardFront:
         text: 'Card Face'
 
-    Button:
-        text: 'Show Definition'
+    CardBack:
+        text: 'Select this box to show the definition.'
 
 <Footer@BoxLayout>:
     orientation: 'horizontal'
@@ -40,7 +53,6 @@
 
 GridLayout:
     rows: 3
-    width: 300
     
     Header:  
 

@@ -1,0 +1,49 @@
+<NavButton@Button>:
+    font_size: '20sp'
+    color: (0.25, 0.75, 1, 1)
+    bold: True
+
+<Header@BoxLayout>:
+    orientation: 'horizontal'
+    size_hint_y: 0.1
+
+    NavButton:
+        text: 'Last'
+
+    NavButton:
+        text: 'Sort'
+
+    NavButton:
+        text: 'Next'
+
+<Body@BoxLayout>:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Card Face'
+
+    Button:
+        text: 'Show Definition'
+
+<Footer@BoxLayout>:
+    orientation: 'horizontal'
+    size_hint_y: 0.1
+
+    NavButton:
+        text: 'Yes'
+
+    NavButton:
+        text: 'Maybe'
+
+    NavButton:
+        text: 'No'
+
+GridLayout:
+    rows: 3
+    width: 300
+    
+    Header:  
+
+    Body:
+
+    Footer:
